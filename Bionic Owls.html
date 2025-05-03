@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<link  rel="icon" href="Bionic Owls (1).png" type="image/png">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,7 +36,7 @@
             color: #f39c12;
         }
         .hero {
-            height: 100vh;
+            height: 120vh;
             background: linear-gradient(to right, #6a11cb, #2575fc);
             color: #fff;
             display: flex;
@@ -45,6 +47,27 @@
             padding: 0 10%;
             animation: fadeIn 2s ease-in-out;
         }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .a{
+            color:black;
+        }
+.a:hover{
+    color: #f39c12;
+}
+        header nav a:hover {
+            color: #f39c12;
+        }
+
+        
         .hero h1 {
             font-size: 3rem;
             animation: slideIn 1.5s ease-in-out;
@@ -72,6 +95,7 @@
         }
         .content {
             padding: 50px 10%;
+            height:100vh;
             text-align: center;
             background-color: #f4f4f4;
         }
@@ -112,16 +136,66 @@
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+        .poster3{
+            border: #333;
+            width: 8cm;
+            height:5cm;
+        border-style: solid; 
+            border-width: 5cm #333;
+            float:left;
+        }
+        .poster2{
+            border: #333;
+            width: 6cm;
+            height:4cm;
+        border-style: solid; 
+            border-width: 5cm #333;
+            float:right;
+        }
+        .poster{
+            border: #333;
+            width: 6cm;
+            height:4cm;
+        border-style: solid; 
+            border-width: 5cm #333;
+        }
+        .hero2{
+            height: 120vh;
+            background: linear-gradient(to right, #10911b, #25fc77);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .hero3{
+            height: 120vh;
+            background: linear-gradient(to right, #a3940f, #fcee25);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .owl{
+            cursor:pointer;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">Bionic Owls</div>
+    <header>  <a href="#home"><img style="width: 100px;" class="owl" src="Bionic Owls (1).png"></img></a>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+<a>                       </a>
+<a></a>
+<a></a>
         </nav>
     </header>
     <section id="home" class="hero">
@@ -130,11 +204,29 @@
         <a href="#about">Get Started</a>
     </section>
     <section id="about" class="content">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <h2>About Us</h2>
-       
-        <div class="card">Innovative Design</div>
-        <div class="card">Custom Solutions</div>
+        <a class="a"  href="#Our Innovation Project"><div class="card">Innovation Project</div></a>
+        <a class="a" href="#Our Robot"><div class="card">Our Robot</div></a>
       
+    </section>
+
+    <section id="Our Robot" class="hero2">
+        <h1>Our Robot</h1>
+        <br>
+        <img class="poster"  src=""></img><img class="poster2"  src=""></img>
+    </section>
+
+    <section class="hero3" id="Our Innovation Project">
+        <h1>Our Innovation Project</h1>
+        <br>
+</img><img class="poster"  src=""></img><img class="poster2"  src=""></img>
+
     </section>
     <footer>
         &copy; 2025 Bionic Owls Website. All Rights Reserved.
