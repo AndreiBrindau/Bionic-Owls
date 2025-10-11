@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-
-<link  rel="icon" href="Bionic Owls (1) - Copy.png" type="image/png">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bionic Owls</title>
+    <link rel="icon" href="Bionic Owls (1) - Copy.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -35,6 +34,16 @@
         header a:hover {
             color: #f39c12;
         }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+        .a {
+            color: black;
+        }
+        .a:hover {
+            color: #f39c12;
+        }
         .hero {
             height: 120vh;
             background: linear-gradient(to right, #6a11cb, #2575fc);
@@ -47,28 +56,6 @@
             padding: 0 10%;
             animation: fadeIn 2s ease-in-out;
         }
-        header nav {
-            display: flex;
-            gap: 15px;
-        }
-
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            
-        }
-        .a{
-            color:black;
-        }
-.a:hover{
-    color: #f39c12;
-}
-        header nav a:hover {
-            color: #f39c12;
-        }
-
-        
         .hero h1 {
             font-size: 3rem;
             animation: slideIn 1.5s ease-in-out;
@@ -96,18 +83,13 @@
         }
         .content {
             padding: 50px 10%;
-            height:100vh;
+            height: 100vh;
             text-align: center;
             background: linear-gradient(to right, #f4f4f4, #908c90);
         }
         .content h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-        }
-        .content p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #666;
         }
         .card {
             display: inline-block;
@@ -137,30 +119,7 @@
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        .poster3{
-            border: #333;
-            width: 8cm;
-            height:5cm;
-        border-style: solid; 
-            border-width: 5cm #333;
-            float:left;
-        }
-        .poster2{
-            border: #333;
-            width: 6cm;
-            height:4cm;
-        border-style: solid; 
-            border-width: 5cm #333;
-            float:right;
-        }
-        .poster{
-            border: #333;
-            width: 6cm;
-            height:4cm;
-        border-style: solid; 
-            border-width: 5cm #333;
-        }
-        .hero2{
+        .hero2 {
             height: 120vh;
             background: linear-gradient(to right, #915d10, #b808b2);
             color: #fff;
@@ -172,7 +131,7 @@
             padding: 0 10%;
             animation: fadeIn 2s ease-in-out;
         }
-        .hero3{
+        .hero3 {
             height: 120vh;
             background: linear-gradient(to right, #0fa360, #3b25fc);
             color: #fff;
@@ -184,61 +143,112 @@
             padding: 0 10%;
             animation: fadeIn 2s ease-in-out;
         }
-        .owl{
-            cursor:pointer;
+        .owl {
+            cursor: pointer;
         }
-        .h
-        {
-            float: left;
-            
+
+
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto 0;
+            gap: 40px;
+        }
+        .team-left, .team-right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 45%;
+        }
+        .member {
+            text-align: center;
+        }
+        .member img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #fff;
         }
     </style>
 </head>
 <body>
-    <header>  <a href="#home"><img style="width: 100px;" class="owl" src="Bionic Owls (1).png"></img></a>
-        <left>
+    <header>
+        <a href="#home"><img style="width: 100px;" class="owl" src="Bionic Owls (1).png" alt="Logo"></a>
         <nav>
-           
-            <a class="h" href="#home">Home        </a>
-            <a class="h" href="#about">About        </a> <a></a><a><a/>
+            <left>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a> 
+            <a></a>
+            <a></a>
             </left>
-<a>                       </a>
-            
-<a></a>
-<a></a>
         </nav>
     </header>
+
     <section id="home" class="hero">
         <h1>Welcome to the Bionic Owls Website</h1>
-      
         <a href="#about">Get Started</a>
     </section>
+
     <section id="about" class="content">
+        <a></a>
+        <a></a>
+        <a></a>
         <br>
+        <a></a>
+        <a></a>
+        <a></a>
         <br>
-        <br>
-        <br>
-        <br>
+        <a></a>
+        <a></a>
+        <a></a>
         <br>
         <h2>About Us</h2>
-<p>We are a dedicated FIRST LEGO League team passionate about designing, building, and programming innovative robots to tackle real-world challenges. Our mission is to inspire creativity, teamwork, and problem-solving through STEM, while making a positive impact in our community.</p>
-<br>
-<br>
-        <a class="a" href="#Our Team"><div class="card">Our Team</div></a><a class="a" href="#Our Robot"><div class="card">Our Robot</div></a>
-      
+        <p>We are a dedicated FIRST LEGO League team passionate about designing, building, and programming innovative robots to tackle real-world challenges. Our mission is to inspire creativity, teamwork, and problem-solving through STEM, while making a positive impact in our community.</p>
+        <br><br>
+        <a class="a" href="#Our Team"><div class="card">Our Team</div></a>
+        <a class="a" href="#Our Robot"><div class="card">Our Robot and Attachments</div></a>
     </section>
 
     <section id="Our Team" class="hero2">
-        <h1>Our Team</h1>
-        <br>
-        <img class="poster"  src=""></img><img class="poster2"  src=""></img>
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="team-left">
+                <div class="member">
+                    <h4>Andrei</h4>
+                    <img src="" alt="Andrei">
+                </div>
+                <div class="member">
+                    <h4>Ryan</h4>
+                    <img src="" alt="Ryan">
+                </div>
+            </div>
+            <div class="team-right">
+                <div class="member">
+                    <h4>George</h4>
+                    <img src="" alt="George">
+                </div>
+                <div class="member">
+                    <h4>Connor</h4>
+                    <img src="" alt="Connor">
+                </div>
+            </div>
+        </div>
     </section>
-        <section id="Our Robot" class="hero3">
+    <section id="Our Robot" class="hero3">
         <h1>Our Robot</h1>
-        <br>
-        <img class="poster"  src=""></img><img class="poster2"  src=""></img>
+        <img class="poster" src="" alt="Robot">
+        <h1>Our Attachments</h1>
+        <img class="poster2" src="" alt="Attachments">
     </section>
-    
+
     <footer>
         &copy; 2025-2026 Bionic Owls Website. All Rights Reserved.
     </footer>
