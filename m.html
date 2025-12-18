@@ -60,12 +60,6 @@
             font-size: 3rem;
             animation: slideIn 1.5s ease-in-out;
         }
-        .hero p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-            opacity: 0;
-            animation: fadeIn 2.5s ease-in-out forwards;
-        }
         .hero a {
             display: inline-block;
             padding: 10px 25px;
@@ -87,10 +81,6 @@
             text-align: center;
             background: linear-gradient(to right, #f4f4f4, #908c90);
         }
-        .content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
         .card {
             display: inline-block;
             width: 250px;
@@ -105,61 +95,8 @@
             transform: translateY(-10px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .hero2 {
-            height: 120vh;
-            background: linear-gradient(to right, #915d10, #b808b2);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero3 {
-            height: 120vh;
-            background: linear-gradient(to right, #d46565, #54fc25);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            animation: fadeIn 2s ease-in-out;
-        }
-                .hero4 {
-            height: 120vh;
-            background: linear-gradient(to right, #0fa360, #121f68);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .owl {
-            cursor: pointer;
-        }
 
-
+        /* TEAM */
         .team-container {
             display: flex;
             justify-content: space-between;
@@ -172,39 +109,69 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
-            width: 45%;
+            width: 40%;
         }
-        .member {
+
+        /* ROBOT RUNS */
+        .runs-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 40px;
+        }
+        .runs-column {
+            width: 45%;
             text-align: center;
         }
-        .member img {
-            width: 200px;
-            height: 200px;
+        .runs-column h2 {
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        .poster2 {
+            width: 240px;
+            height: 240px;
+            border: 3px solid white;
+            border-radius: 12px;
             object-fit: cover;
-            border-radius: 10px;
-            border: 3px solid #fff;
         }
-        html {
-            scroll-behavior: smooth;
+
+        .hero2, .hero3, .hero4 {
+            height: 120vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            animation: fadeIn 2s ease-in-out;
         }
+        .hero2 { background: linear-gradient(to right, #915d10, #b808b2); }
+        .hero3 { background: linear-gradient(to right, #d46565, #54fc25); }
+        .hero4 { background: linear-gradient(to right, #0fa360, #121f68); }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        html { scroll-behavior: smooth; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>
 </head>
+
 <body>
     <header>
-        <a href="#home"><img style="width: 100px;" class="owl" src="Bionic Owls (1).png" alt="Logo"></a>
+        <a href="#home"><img style="width: 100px;" src="Bionic Owls (1).png" alt="Logo"></a>
         <nav>
-            <left>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#Our Innovation Project">ArchaePus</a>
-            <a></a>
-            <a></a>
-            <a></a>
-            <a></a>
-            <a></a> 
-            <a></a>
-            <a></a>
-            </left>
+            <a></a><a></a><a></a><a></a><a></a><a></a>
         </nav>
     </header>
 
@@ -213,22 +180,14 @@
         <a href="#about">Get Started</a>
     </section>
 
-    <section id="about" class="content">
-        
-        <a></a>
-        <a></a>
-        <a></a>
-        <br>
-        <a></a>
-        <a></a>
-        <a></a>
-        <br>
-        <a></a>
-        <a></a>
-        <a></a>
-        <br>
+    <section id="about" class="content"><a></a><a></a><a></a><br><br><br><br><br><br>
+        <a></a><a></a><a></a><br>
+        <a></a><a></a><a></a><br>
+        <a></a><a></a><a></a><br>
+        <a></a><a></a><a></a>
+<a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a>
         <h2>About Us</h2>
-        <p>We are a dedicated FIRST LEGO League team passionate about designing, building, and programming innovative robots to tackle real-world challenges. Our mission is to inspire creativity, teamwork, and problem-solving through STEM, while making a positive impact in our community.</p>
+        <p>We are a dedicated FIRST LEGO League team passionate about designing, building, and programming innovative robots to tackle real-world challenges.</p>
         <br><br>
         <a class="a" href="#Our Team"><div class="card">Our Team</div></a>
         <a class="a" href="#Our Robot"><div class="card">Our Robot and Attachments</div></a>
@@ -252,23 +211,55 @@
             </div>
         </div>
     </section>
+
     <section id="Our Robot" class="hero3">
-        <h1>Our Robot</h1>
+        <h2>Our Robot</h2>
         <img class="poster" src="" alt="Robot">
-        <h1>Our Attachments</h1>
-        <img class="poster2" src="" alt="Attachments">
+        <h2>Our Attachments</h2>
+
+
+        <!-- RUNS WITH SPACING KEPT -->
+        <a></a><br><a></a>
+
+        <div class="runs-container">
+            <div class="runs-column">
+                <h3>Andrei's Runs</h3>
+
+                <h2>Run 1</h2>
+                <img class="poster2" src="" alt="Run 1"><a></a><br>
+
+                <h3>Run 2</h3>
+                <img class="poster2" src="" alt="Run 2"><a></a><br>
+
+                <h3>Run 3</h3>
+                <img class="poster2" src="" alt="Run 3"><a></a><br>
+            </div>
+
+            <div class="runs-column">
+                <h2>George's Missions</h2>
+
+                <h3>Run 4</h3>
+                <img class="poster2" src="" alt="Run 4"><a></a><br>
+
+                <h3>Run 5</h3>
+                <img class="poster2" src="" alt="Run 5"><a></a><br>
+
+                <h3>Run 6</h3>
+                <img class="poster2" src="" alt="Run 6"><a></a><br>
+            </div>
+        </div>
+        <br><br><br><br><br><br>
     </section>
+
     <section id="Our Innovation Project" class="hero4">
         <h1>Our Innovation Project</h1>
         <h3>ArchaePus</h3>
-        <p>The ArchaePus, a groundbreaking robotic octopus, transforms archaeology by delicately retrieving hidden artifacts from narrow underwater crevices unreachable by humans.</p>
+        <p>The ArchaePus transforms archaeology by delicately retrieving hidden artifacts underwater.</p>
         <img class="poster3" style="width: 5cm;" src="Archaepus Logo2.png" alt="ArchaePus">
-<a class="a" href="https://andreibrindau.github.io/ArchaePus/AP.html"><div class="card">ArchaePus</div></a>
-
+        <a class="a" href="https://andreibrindau.github.io/ArchaePus/AP.html"><div class="card">ArchaePus</div></a>
     </section>
 
-    <footer>
-        &copy; 2025-2026 Bionic Owls Website. All Rights Reserved.
-    </footer>
+    <footer>&copy; 2025-2026 Bionic Owls Website. All Rights Reserved.</footer>
+
 </body>
 </html>
