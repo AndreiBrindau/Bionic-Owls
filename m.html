@@ -1,305 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bionic Owls</title>
-    <link rel="icon" href="Bionic Owls (1) - Copy.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        header a:hover { color: #f39c12; }
-        header nav { display: flex; gap: 15px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bionic Owls | Solo Tech Creator</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+/* Base */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Roboto',sans-serif; background:#111; color:#eee; overflow-x:hidden; }
 
-        .a { color: black; }
-        .a:hover { color: #f39c12; }
+/* Header */
+header {
+  position:fixed; top:0; width:100%; z-index:1000;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 10%; background:rgba(17,17,17,0.95); backdrop-filter:blur(6px);
+}
+header a { color:#eee; text-decoration:none; margin:0 15px; font-weight:500; transition:0.3s; cursor:pointer; }
+header a:hover { color:#f39c12; }
 
-        .hero {
-            height: 120vh;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            animation: slideIn 1.5s ease-in-out;
-        }
-        .hero a {
-            display: inline-block;
-            padding: 10px 25px;
-            color: #fff;
-            background-color: #f39c12;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .hero a:hover {
-            transform: scale(1.1);
-            background-color: #d35400;
-        }
+/* Sections */
+section { height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; padding:0 10%; opacity:0; transform:translateY(50px); transition:1s ease; }
+section.active { opacity:1; transform:translateY(0); }
 
-        .content {
-            padding: 50px 10%;
-            height: 100vh;
-            text-align: center;
-            background: linear-gradient(to right, #f4f4f4, #908c90);
-        }
-        .card {
-            display: inline-block;
-            width: 250px;
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
+/* Hero */
+.hero { flex-direction:column; background:linear-gradient(135deg,#1a1a1a,#333); color:#f39c12; }
+.hero h1 { font-size:4rem; letter-spacing:2px; margin-bottom:20px; }
+.hero p { font-size:1.5rem; margin-bottom:40px; }
+.hero a { padding:15px 35px; border-radius:8px; font-weight:bold; color:#111; background:#f39c12; text-decoration:none; transition:0.3s; }
+.hero a:hover { background:#d35400; transform:scale(1.05); }
 
-        /* TEAM */
-        .team-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1000px;
-            margin: 40px auto 0;
-            gap: 40px;
-        }
-        .team-left, .team-right {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            width: 40%;
-        }
+/* About Section */
+.about { flex-direction:row; gap:50px; max-width:1200px; margin:auto; }
+.about img { width:45%; border-radius:15px; transition:transform 0.5s; }
+.about img:hover { transform:scale(1.05); }
+.about .text { flex:1; text-align:left; }
+.about h2 { font-size:3rem; margin-bottom:20px; color:#f39c12; }
+.about p { font-size:1.2rem; line-height:1.6; }
 
-        /* ROBOT RUNS */
-        .runs-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 900px;
-            margin-top: 40px;
-        }
-        .runs-column {
-            width: 45%;
-            text-align: center;
-        }
-        .runs-column h2 {
-            text-decoration: underline;
-            margin-bottom: 20px;
-        }
-        .poster2 {
-            width: 60px;
-            height: 60px;
-            border: 3px solid white;
-            border-radius: 12px;
-            object-fit: cover;
-            cursor: pointer;
-        }
+/* Projects Section */
+.projects { display:flex; flex-direction:column; gap:60px; width:100%; max-width:1200px; margin:180px auto 0; /* added top margin to avoid nav overlap */ }
+.project { display:flex; gap:50px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:#222; padding:30px; border-radius:15px; transition:transform 0.3s, box-shadow 0.3s; }
+.project:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.5); }
+.project img { width:300px; border-radius:12px; }
+.project div { max-width:600px; text-align:left; }
+.project h3 { color:#f39c12; margin-bottom:10px; }
 
-        .hero2, .hero3, .hero4 {
-            height: 120vh;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero2 { background: linear-gradient(to right, #915d10, #b808b2); }
-        .hero3 { background: linear-gradient(to right, #d46565, #54fc25); }
-        .hero4 { background: linear-gradient(to right, #0fa360, #121f68); }
+/* Video Section */
+.video-section { flex-direction:column; gap:30px; background:#222; color:#fff; }
+.video-section h2 { font-size:3rem; margin-bottom:20px; color:#f39c12; }
+.video-section iframe { width:80%; height:450px; border-radius:12px; border:none; transition:transform 0.3s; }
+.video-section iframe:hover { transform:scale(1.02); }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        html { scroll-behavior: smooth; }
+/* Contact Section */
+.contact { flex-direction:column; gap:20px; }
+.contact h2 { font-size:3rem; margin-bottom:20px; color:#f39c12; }
+.contact .links { display:flex; gap:30px; justify-content:center; flex-wrap:wrap; }
+.contact .card { background:#222; color:#eee; padding:20px 40px; border-radius:12px; font-weight:bold; text-decoration:none; transition:transform 0.3s, background 0.3s; }
+.contact .card:hover { transform:scale(1.1); background:#f39c12; color:#111; }
 
-        /* IMAGE MODAL */
-        .image-modal {
-            display: none;
-            position: fixed;
-            z-index: 3000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            justify-content: center;
-            align-items: center;
-        }
-        .image-modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 12px;
-        }
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 40px;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
+/* Footer */
+footer { padding:20px; text-align:center; background:#111; color:#eee; }
 
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    </style>
+/* Responsive */
+@media(max-width:900px){
+    .about { flex-direction:column; text-align:center; }
+    .about img { width:80%; margin-bottom:20px; }
+    .project { flex-direction:column; text-align:center; }
+    .project img { width:80%; margin-bottom:15px; }
+    .video-section iframe { width:90%; height:300px; }
+}
+</style>
 </head>
-
 <body>
-    <header>
-        <a href="#home"><img style="width: 100px;" src="Bionic Owls (1).png" alt="Logo"></a>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#Our Innovation Project">ArchaePus</a>
-            <a></a><a></a><a></a><a></a><a></a><a></a>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <h1>Welcome to the Bionic Owls Website</h1>
-        <a href="#about">Get Started</a>
-    </section>
+<header>
+    <a href="#home"><img src="Bionic Owls (1).png" alt="Logo" style="width:100px;"></a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About This</a>
+        <a href="#projects">Innovation Project</a>
+        <a href="#video">Video</a>
+        <a href="#contact">Connect</a>
+    </nav>
+</header>
 
-    <section id="about" class="content"><a></a><a></a><a></a><br><br><br><br><br><br>
-        <a></a><a></a><a></a><br>
-        <a></a><a></a><a></a><br>
-        <a></a><a></a><a></a><br>
-        <a></a><a></a><a></a>
-        <h2>About Us</h2>
-        <p>We are a dedicated FIRST LEGO League team passionate about designing, building, and programming innovative robots to tackle real-world challenges.</p>
-        <br><br>
-        <a class="a" href="#Our Team"><div class="card">Our Team</div></a>
-        <a class="a" href="#Our Robot"><div class="card">Our Robot and Attachments</div></a>
-        <a class="a" href="#Our Innovation Project"><div class="card">Our Innovation Project</div></a>
-    </section>
-
-    <section id="Our Team" class="hero2">
-
-        <h3>Our Team</h3>
-
-
-        <div class="runs-container">
-            <div class="runs-column">
-                <h4>Andrei Brindau</h4>
-                <img class="poster2 zoomable" src="Andrei B.jpg" alt="Andrei Brindau">
-            </div>
-            <div class="runs-column">
-                <h4>George Brindau</h4>
-                <img class="poster2 zoomable" src="George B.jpg" alt="George Brindau">
-            </div>
-        </div>
-    </section>
-    
-
-    <section id="Our Robot" class="hero3">
-        <a></a><a></a><br><br>
-        <h3>Our Robot</h3>
-        <img class="poster2 zoomable" src="" alt="Run 1">
-        <h3>Our Attachments</h3>
-
-
-        <div class="runs-container">
-            <div class="runs-column">
-                <h4>Andrei's Runs</h4>
-                <h4>Run 1</h4>
-                <img class="poster2 zoomable" src="R1 A.jpg" alt="Run 1">
-                <h4>Run 2</h4>
-                <img class="poster2 zoomable" src="R2 A.jpg" alt="Run 2">
-                <h4>Run 3</h4>
-                <img class="poster2 zoomable" src="R3 A.jpg" alt="Run 3">
-            </div>
-            <div class="runs-column">
-                <h4>George's Runs</h4>
-                <h4>Run 4</h4>
-                <img class="poster2 zoomable" src="R4 G.jpg" alt="Run 4">
-                <h4>Run 5</h4>
-                <img class="poster2 zoomable" src="R5 G.jpg" alt="Run 5">
-                <h4>Run 6</h4>
-                <img class="poster2 zoomable" src="R6 G.jpg" alt="Run 6">
-            </div>
-        </div>
-        <a></a><a></a><br><br>
-    </section>
-
-    <section id="Our Innovation Project" class="hero4">
-    <h1>Our Innovation Project</h1>
-    <h3>ArchaePus</h3>
-    <p>The ArchaePus transforms archaeology by delicately retrieving hidden artifacts underwater.</p>
-    <img class="poster3" style="width: 5cm;" src="Archaepus Logo2.png" alt="ArchaePus">
-    <a class="a" href="https://andreibrindau.github.io/ArchaePus/AP.html">
-        <div class="card">ArchaePus</div>
-    </a>
+<section id="home" class="hero">
+    <h1>Bionic Owls</h1>
+    <p>Solo Creator | Robotics, Arduino, 3D Printing & Game Dev</p>
+    <a href="#about">Explore</a>
 </section>
 
-
-    <div id="imageModal" class="image-modal">
-        <span class="close-btn" onclick="closeModal()">×</span>
-        <img id="modalImg" src="">
+<section id="about" class="about">
+    <div class="text">
+        <h2>About This</h2>
+        <p>This solo project explores technology, robotics, Arduino, 3D printing, and game development. Every project is about building, experimenting, and sharing creative ideas with the world.</p>
     </div>
+    <img src="R1 A.jpg" alt="Sample Project">
+</section>
 
-    <footer>&copy; 2025-2026 Bionic Owls Website. All Rights Reserved.</footer>
+<section id="projects" class="projects">
+    <br><br><br><br><br><br><br>
+    <div class="project">
+        <img src="R1 A.jpg" alt="Robotics">
+        <div>
+            <h3>Robotics Build</h3>
+            <p>Experimenting with autonomous robot runs, attachments, and problem-solving challenges.</p>
+        </div>
+    </div>
+    <div class="project">
+        <img src="R2 A.jpg" alt="3D Printing">
+        <div>
+            <h3>3D Printing</h3>
+            <p>Custom designs, prototyping, and creative prints for tech projects.</p>
+        </div>
+    </div>
+    <div class="project">
+        <img src="R3 A.jpg" alt="Game Dev">
+        <div>
+            <h3>Game Development</h3>
+            <p>Small games, simulations, and experiments to improve coding and design skills.</p>
+        </div>
+    </div>
+</section>
 
-    <script>
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImg");
-        document.querySelectorAll(".zoomable").forEach(img => {
-            img.addEventListener("click", () => {
-                if (!img.src) return;
-                modal.style.display = "flex";
-                modalImg.src = img.src;
-            });
-        });
-        function closeModal() {
-            modal.style.display = "none";
-            modalImg.src = "";
-        }
-        modal.addEventListener("click", e => {
-            if (e.target === modal) closeModal();
-        });
-    </script>
+<section id="video" class="video-section">
+    <br><br><br><br><br><br><br><br>
+    <h2>Featured Video</h2>
+    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Connect</h2>
+    <div class="links">
+        <a class="card" href="#">YouTube</a>
+        <a class="card" href="https://github.com/AndreiBrindau/Bionic-Owls">GitHub</a>
+    </div>
+</section>
+
+<footer>&copy; 2025-2026 Bionic Owls. All Rights Reserved.</footer>
+
+<script>
+// Reveal sections on scroll
+const sections = document.querySelectorAll('section');
+function revealSections() {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if(top < windowHeight - 100){
+      sec.classList.add('active');
+    }
+  });
+}
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+
+// Smooth scroll for nav links
+document.querySelectorAll('header a').forEach(link=>{
+    link.addEventListener('click', e=>{
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+});
+</script>
+
 </body>
 </html>
