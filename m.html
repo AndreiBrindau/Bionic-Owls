@@ -84,7 +84,7 @@ footer { padding:20px; text-align:center; background:#111; color:#eee; }
         <a href="#projects">Innovation Project</a>
         <a href="#video">Video</a>
         <a href="#contact">Connect</a>
-        <a href="https://andreibrindau.github.io/Insta-Print/a.html">Insta-Print</a>
+        <a href="https://andreibrindau.github.io/Insta-Print/a.html" target="_blank">Insta-Print</a>
     </nav>
 </header>
 
@@ -157,9 +157,13 @@ window.addEventListener('load', revealSections);
 // Smooth scroll for nav links
 document.querySelectorAll('header a').forEach(link=>{
     link.addEventListener('click', e=>{
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior:'smooth', block:'start' });
+        const href = link.getAttribute('href');
+        // Only prevent default and smooth scroll for internal links (starting with #)
+        if(href.startsWith('#')){
+            e.preventDefault();
+            const target = document.querySelector(href);
+            target.scrollIntoView({ behavior:'smooth', block:'start' });
+        }
     });
 });
 </script>
